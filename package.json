@@ -1,6 +1,7 @@
 {
 	"devDependencies": {
 		"@types/chrome": "^0.1.27",
+		"@vite-pwa/assets-generator": "^1.0.2",
 		"typescript": "^5.9.3",
 		"wireit": "^0.14.12"
 	},
@@ -11,11 +12,30 @@
 		"build": {
 			"command": "tsc src/background.ts --outDir .",
 			"clean": "if-file-deleted",
+			"dependencies": [
+				"pwa-assets"
+			],
 			"files": [
 				"./src/background.ts"
 			],
 			"output": [
 				"./background.js"
+			]
+		},
+		"pwa-assets": {
+			"command": "pwa-assets-generator --preset minimal-2023 --html.preset 2025 ./assets/img/logo.svg && ./scripts/generate-128-icon.js",
+			"files": [
+				"./scripts/generate-128-icon.js",
+				"./assets/img/logo.svg"
+			],
+			"output": [
+				"./assets/img/pwa-64x64.png",
+				"./assets/img/pwa-192x192.png",
+				"./assets/img/pwa-512x512.png",
+				"./assets/img/maskable-icon-512x512.png",
+				"./assets/img/apple-touch-icon-180x180.png",
+				"./assets/img/favicon.ico",
+				"./assets/img/chrome-store-128x128.png"
 			]
 		}
 	}

@@ -14,5 +14,8 @@
 			},
 			"description": "Unload the active tab"
 		}
+	},
+	"icons": {
+		"128": "/assets/img/pwa-192x192.png"
 	}
 }
