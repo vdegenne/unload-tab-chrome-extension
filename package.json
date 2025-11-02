@@ -1,0 +1,22 @@
+{
+	"devDependencies": {
+		"@types/chrome": "^0.1.27",
+		"typescript": "^5.9.3",
+		"wireit": "^0.14.12"
+	},
+	"scripts": {
+		"build": "wireit"
+	},
+	"wireit": {
+		"build": {
+			"command": "tsc src/background.ts --outDir .",
+			"clean": "if-file-deleted",
+			"files": [
+				"./src/background.ts"
+			],
+			"output": [
+				"./background.js"
+			]
+		}
+	}
+}

@@ -2,17 +2,17 @@
 	"manifest_version": 3,
 	"name": "unload-tab-chrome-extension",
 	"version": "1.0",
-	"description": "Unload (discard) the active tab with a keyboard shortcut",
+	"description": "ctrl+alt+w shortcut to unload any tab",
 	"permissions": ["tabs"],
 	"background": {
 		"service_worker": "background.js"
 	},
 	"commands": {
-		"discard_active_tab": {
+		"unload_active_tab": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+U"
+				"default": "Ctrl+Alt+W"
 			},
-			"description": "Discard the active tab"
+			"description": "Unload the active tab"
 		}
 	}
 }
